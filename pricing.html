@@ -46,19 +46,21 @@
   .note { color: var(--muted); font-size: .9rem; margin-top: 22px; }
   .note b { color: var(--graphite); font-weight: 600; }
 
-  .credit { background: var(--pine); border-color: var(--pine); margin-top: 24px; }
-  .credit:hover { border-color: var(--pine); }
-  .credit h3 { color: var(--cream); }
-  .credit p { color: rgba(245,241,232,.82); font-size: 1.02rem; }
-  .credit .eyebrow { color: var(--sage); margin-bottom: 10px; }
-  .credit ul { list-style: none; margin-top: 18px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
-  .credit li { padding: 11px 0 11px 26px; border-top: 1px solid rgba(245,241,232,.18); color: rgba(245,241,232,.82); font-size: .95rem; position: relative; }
+  .credit {
+    background: #FDF4EE; margin-top: 24px;
+    border: 1px solid rgba(238,106,36,.32); border-left: 5px solid var(--orange);
+  }
+  .credit:hover { border-color: rgba(238,106,36,.32); border-left-color: var(--orange); }
+  .credit h3 { color: var(--graphite); font-size: 1.5rem; max-width: 22ch; }
+  .credit p { color: var(--text); font-size: 1.02rem; margin-top: 14px; }
+  .credit ul { list-style: none; margin-top: 14px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+  .credit li { padding: 11px 0 11px 26px; border-top: 1px solid rgba(238,106,36,.22); color: var(--text); font-size: .97rem; font-weight: 600; position: relative; }
   .credit li::before { content: "\2713"; position: absolute; left: 0; top: 11px; color: var(--orange); font-weight: 700; }
-  .credit .fine { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(245,241,232,.18); }
-  .credit .fine .lab { color: var(--sage); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; }
+  .credit .fine { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(238,106,36,.22); }
+  .credit .fine .lab { color: var(--pine); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; }
   .credit .fine ul { display: block; margin-top: 8px; }
-  .credit .fine li { border-top: 0; padding: 4px 0 4px 18px; font-size: .88rem; color: rgba(245,241,232,.68); }
-  .credit .fine li::before { content: "\2022"; color: rgba(245,241,232,.45); left: 2px; top: 4px; font-weight: 400; }
+  .credit .fine li { border-top: 0; padding: 4px 0 4px 18px; font-size: .88rem; color: var(--muted); font-weight: 400; }
+  .credit .fine li::before { content: "\2022"; color: var(--muted); left: 2px; top: 4px; font-weight: 400; }
   @media (max-width: 860px) { .credit ul { grid-template-columns: 1fr; } }
 
   .tier { display: flex; flex-direction: column; }
@@ -139,9 +141,8 @@
     </div>
 
     <div class="card credit">
-      <span class="eyebrow">Your assessment comes back to you</span>
-      <h3>Assessment fees are credited</h3>
-      <p>What you pay for your Golf Body-Swing Assessment or Fitness Assessment is credited toward either of the following:</p>
+      <h3>Free Assessment with Purchase of Membership or Package of 8+</h3>
+      <p>The Cost of your Assessment is credited toward:</p>
       <ul>
         <li>A Tier 2 or Tier 1 monthly membership</li>
         <li>Any package of 8 or more tokens or training sessions</li>
