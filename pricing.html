@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-93L7SD7Q6R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-93L7SD7Q6R');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing &amp; Membership — The Turn Performance Golf Club</title>
+<meta name="description" content="Pricing at The Turn Performance Golf Club: assessments, golf performance tokens, personal training, junior golf programs, and monthly membership tiers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ---- pricing page only ---- */
+  .price-rows { margin-top: 6px; }
+  .price-row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+    padding: 15px 0; border-bottom: 1px solid var(--line);
+  }
+  .price-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .price-row .qty { font-weight: 600; font-size: .98rem; color: var(--graphite); }
+  .price-row .qty small { display: block; font-weight: 400; color: var(--muted); font-size: .83rem; margin-top: 2px; }
+  .price-row .amt { text-align: right; white-space: nowrap; }
+  .price-row .amt b {
+    font-family: var(--display); font-weight: 400; font-size: 1.55rem;
+    color: var(--pine); line-height: 1; letter-spacing: .5px;
+  }
+  .price-row .amt small { display: block; color: var(--muted); font-size: .82rem; margin-top: 5px; }
+
+  .solo-price {
+    font-family: var(--display); font-weight: 400; font-size: 3.1rem;
+    color: var(--orange); line-height: 1; letter-spacing: .5px; margin: 6px 0 12px;
+  }
+  .req {
+    display: inline-block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    font-weight: 700; color: var(--pine); background: rgba(167,179,156,.28);
+    border: 1px solid rgba(36,68,54,.16); border-radius: 999px; padding: 5px 13px;
+  }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 22px; }
+  .note b { color: var(--graphite); font-weight: 600; }
+
+  .credit { background: var(--pine); border-color: var(--pine); margin-top: 24px; }
+  .credit:hover { border-color: var(--pine); }
+  .credit h3 { color: var(--cream); }
+  .credit p { color: rgba(245,241,232,.82); font-size: 1.02rem; }
+  .credit .eyebrow { color: var(--sage); margin-bottom: 10px; }
+  .credit ul { list-style: none; margin-top: 18px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+  .credit li { padding: 11px 0 11px 26px; border-top: 1px solid rgba(245,241,232,.18); color: rgba(245,241,232,.82); font-size: .95rem; position: relative; }
+  .credit li::before { content: "\2713"; position: absolute; left: 0; top: 11px; color: var(--orange); font-weight: 700; }
+  .credit .fine { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(245,241,232,.18); }
+  .credit .fine .lab { color: var(--sage); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; }
+  .credit .fine ul { display: block; margin-top: 8px; }
+  .credit .fine li { border-top: 0; padding: 4px 0 4px 18px; font-size: .88rem; color: rgba(245,241,232,.68); }
+  .credit .fine li::before { content: "\2022"; color: rgba(245,241,232,.45); left: 2px; top: 4px; font-weight: 400; }
+  @media (max-width: 860px) { .credit ul { grid-template-columns: 1fr; } }
+
+  .tier { display: flex; flex-direction: column; }
+  .tier .tier-name { color: var(--orange); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; font-family: var(--font); }
+  .tier .tier-price { font-family: var(--display); font-weight: 400; font-size: 3rem; color: var(--graphite); line-height: 1; letter-spacing: .5px; margin: 10px 0 4px; }
+  .tier .tier-price span { font-family: var(--font); font-size: .9rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+  .tier ul { list-style: none; margin-top: 20px; }
+  .tier li { padding: 11px 0 11px 26px; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; position: relative; }
+  .tier li::before { content: "\2713"; position: absolute; left: 0; top: 11px; color: var(--orange); font-weight: 700; }
+  .tier.featured { border-color: rgba(238,106,36,.55); box-shadow: var(--shadow); }
+
+  .benefits { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; }
+  .benefits li { padding: 13px 0 13px 26px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .95rem; position: relative; }
+  .benefits li::before { content: "\2713"; position: absolute; left: 0; top: 13px; color: var(--orange); font-weight: 700; }
+
+  @media (max-width: 860px) {
+    .benefits { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .card:hover { transition: none; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="The Turn Performance Golf Club">
+      <img src="logo-wordmark-orange.svg" alt="The Turn Performance Golf Club" class="brand-logo">
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="success.html">Success Stories</a>
+      <a href="events.html">Events</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="book.html" class="btn btn-primary">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="hero" style="padding-bottom:clamp(40px,6vw,70px);">
+  <div class="container">
+    <span class="eyebrow">Services &amp; membership</span>
+    <h1>What it <span>costs</span>.</h1>
+    <p class="lead" style="margin-top:18px;">Assessments, lesson and training packages, junior programs, and monthly membership. Everything in one place, no guessing at the counter.</p>
+    <div class="hero-cta">
+      <a href="book.html" class="btn btn-primary">Book an Assessment</a>
+      <a href="team.html" class="btn btn-ghost">Meet the Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ASSESSMENTS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Start here</span>
+      <h2>Assessments</h2>
+      <p class="lead" style="margin-top:14px;">Every program at The Turn starts with a baseline. We measure how you move before we change how you swing or train.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Golf Body-Swing Assessment</h3>
+        <div class="solo-price">$225</div>
+        <span class="req">Required before any lessons</span>
+        <p style="margin-top:18px;">A full screen connecting how your body moves to how your swing works, so your coaching plan is built on your physical reality rather than a generic model.</p>
+      </div>
+      <div class="card">
+        <h3>Fitness Assessment</h3>
+        <div class="solo-price">$175</div>
+        <span class="req">Required before any fitness sessions</span>
+        <p style="margin-top:18px;">A movement and strength baseline that sets the starting point for your training program and gives us something to measure progress against.</p>
+      </div>
+    </div>
+
+    <div class="card credit">
+      <span class="eyebrow">Your assessment comes back to you</span>
+      <h3>Assessment fees are credited</h3>
+      <p>What you pay for your Golf Body-Swing Assessment or Fitness Assessment is credited toward either of the following:</p>
+      <ul>
+        <li>A Tier 2 or Tier 1 monthly membership</li>
+        <li>Any package of 8 or more tokens or training sessions</li>
+      </ul>
+      <div class="fine">
+        <span class="lab">Conditions</span>
+        <ul>
+          <li>One assessment credit per customer.</li>
+          <li>Credit may be applied once, to a single purchase.</li>
+          <li>The qualifying package or membership must be purchased at the time of your assessment.</li>
+          <li>Does not apply to junior lessons.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LESSONS &amp; TRAINING ===== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Lessons &amp; training</span>
+      <h2>Tokens &amp; personal training</h2>
+      <p class="lead" style="margin-top:14px;">Buy as you go or buy in volume. The more you commit to, the lower the rate per session.</p>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <h3>Golf Performance Tokens</h3>
+        <div class="price-rows" style="margin-top:18px;">
+          <div class="price-row">
+            <div class="qty">1 Token</div>
+            <div class="amt"><b>$160</b></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">4 Tokens</div>
+            <div class="amt"><b>$155</b><small>each &middot; $620 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">8 Tokens</div>
+            <div class="amt"><b>$145</b><small>each &middot; $1,160 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">12 Tokens</div>
+            <div class="amt"><b>$135</b><small>each &middot; $1,620 total</small></div>
+          </div>
+        </div>
+        <p class="note">Tokens can be used for golf lessons or personal training sessions. <b>Your assessment fee is credited toward the 8 and 12 token packages.</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Personal Training</h3>
+        <div class="price-rows" style="margin-top:18px;">
+          <div class="price-row">
+            <div class="qty">1 Session</div>
+            <div class="amt"><b>$150</b></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">4 Sessions</div>
+            <div class="amt"><b>$140</b><small>each &middot; $560 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">8 Sessions</div>
+            <div class="amt"><b>$130</b><small>each &middot; $1,040 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">12 Sessions</div>
+            <div class="amt"><b>$120</b><small>each &middot; $1,440 total</small></div>
+          </div>
+        </div>
+        <p class="note">A Fitness Assessment is required before your first training session. <b>Your assessment fee is credited toward the 8 and 12 session packages.</b></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== JUNIOR ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">For younger players</span>
+      <h2>Junior Golf Performance</h2>
+      <p class="lead" style="margin-top:14px;">Coaching built around a growing body, in session lengths that match a junior's attention and schedule.</p>
+    </div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <h3>30 Minute Sessions</h3>
+        <div class="price-rows" style="margin-top:18px;">
+          <div class="price-row">
+            <div class="qty">1 Session</div>
+            <div class="amt"><b>$60</b></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">4 Sessions</div>
+            <div class="amt"><b>$55</b><small>each &middot; $220 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">10 Sessions</div>
+            <div class="amt"><b>$50</b><small>each &middot; $500 total</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>50 Minute Sessions</h3>
+        <div class="price-rows" style="margin-top:18px;">
+          <div class="price-row">
+            <div class="qty">1 Session</div>
+            <div class="amt"><b>$95</b></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">4 Sessions</div>
+            <div class="amt"><b>$90</b><small>each &middot; $360 total</small></div>
+          </div>
+          <div class="price-row">
+            <div class="qty">10 Sessions</div>
+            <div class="amt"><b>$85</b><small>each &middot; $850 total</small></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="note">The assessment credit does not apply to junior lessons.</p>
+  </div>
+</section>
+
+<!-- ===== MEMBERSHIP ===== -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Monthly membership</span>
+      <h2>Membership tiers</h2>
+      <p class="lead" style="margin-top:14px;">Bay time, PuttView, and the gym on a monthly plan, with tokens and stretches built in. Join at Tier 2 or Tier 1 and your assessment fee is credited toward the membership.</p>
+    </div>
+
+    <div class="grid grid-3">
+
+      <div class="card tier featured">
+        <div class="tier-name">Tier 1</div>
+        <div class="tier-price">$750 <span>/ month</span></div>
+        <ul>
+          <li>Unlimited hitting bay usage</li>
+          <li>Unlimited PuttView usage</li>
+          <li>2 Golf Performance Tokens</li>
+          <li>2 &times; 25 minute golf stretches</li>
+          <li>Full gym access</li>
+        </ul>
+      </div>
+
+      <div class="card tier">
+        <div class="tier-name">Tier 2</div>
+        <div class="tier-price">$500 <span>/ month</span></div>
+        <ul>
+          <li>10 hours hitting bay usage</li>
+          <li>10 hours PuttView usage</li>
+          <li>1 Golf Performance Token</li>
+          <li>1 &times; 25 minute golf stretch</li>
+          <li>Full gym access</li>
+        </ul>
+      </div>
+
+      <div class="card tier">
+        <div class="tier-name">Tier 3</div>
+        <div class="tier-price">$225 <span>/ month</span></div>
+        <ul>
+          <li>5 hours hitting bay usage</li>
+          <li>5 hours PuttView usage</li>
+          <li>Introductory golf stretch (one time use)</li>
+          <li>Gym access optional, add $75</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:28px;">
+      <h3>Member benefits</h3>
+      <p style="color:var(--muted); font-size:.95rem; margin:8px 0 20px;">Included with every tier.</p>
+      <ul class="benefits">
+        <li>Booking priority</li>
+        <li>Free grip labor</li>
+        <li>Free clinics</li>
+        <li>Member retail pricing</li>
+        <li>20% off TPGC tournaments &amp; leagues</li>
+        <li>Free member outings</li>
+        <li>20% off Golf Performance Tokens and Personal Training sessions, individual only, packages excluded</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Start with an assessment</h2>
+      <p>Book your Golf Body-Swing or Fitness Assessment and we will build the plan from there. Questions about membership? Call the club and we will walk you through it.</p>
+      <a href="book.html" class="btn btn-primary">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:16px;" aria-label="The Turn Performance Golf Club">
+          <img src="logo-wordmark-cream.svg" alt="The Turn Performance Golf Club" class="brand-logo">
+        </a>
+        <p style="max-width:340px;">Where performance meets lifestyle and community. Train, play, recover, and socialize — all under one roof.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="events.html">Events</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="book.html">Book Now</a>
+      </div>
+      <div>
+        <h4>Visit &amp; Follow</h4>
+        <a href="https://maps.google.com/?q=7802+Dublin+Blvd,+Dublin,+CA+94568" target="_blank" rel="noopener">7802 Dublin Blvd.<br>Dublin, CA 94568</a>
+        <a href="tel:+19253617155">(925) 361-7155</a>
+        <a href="mailto:info@theturnpgc.com">info@theturnpgc.com</a>
+        <a href="https://www.instagram.com/theturnpgc" target="_blank" rel="noopener">Instagram &#8599; @theturnpgc</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Turn Performance Golf Club. All rights reserved.</span>
+      <span>theturnpgc.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const t = document.querySelector('.nav-toggle');
+  const l = document.querySelector('.nav-links');
+  t.addEventListener('click', () => {
+    const open = l.classList.toggle('open');
+    t.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>
